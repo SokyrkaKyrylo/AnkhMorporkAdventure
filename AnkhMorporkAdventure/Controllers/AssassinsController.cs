@@ -1,4 +1,5 @@
-﻿using OOPCourse.Domain.Abstract;
+﻿using AnkhMorporkAdventure.Models;
+using OOPCourse.Domain.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,18 +22,31 @@ namespace AnkhMorporkAdventure.Controllers
             return View();
         }
 
-        public ActionResult About()
+        [HttpGet]
+        public ActionResult Offer()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
-        public ActionResult Contact()
+        [HttpPost]
+        public ActionResult Confirm(RewardModel r)
         {
-            ViewBag.Message = "Your contact page.";
+            if (r == null)
+                return HttpNotFound();
 
-            return View();
+            if (ModelState.IsValid)
+            {        
+                //var assassin = _assassins.Assassins
+                //    .Where(a => a.Status)
+                //    .FirstOrDefault(a => a.HighRewardBound >= reward && a.LowRewardBound <= reward);
+
+                //if (assassin == null)
+                //    return RedirectToAction("End", "Game",
+                //        new { message = "Sorry, but we don't have killer who will make this job for this reward" });
+
+                return RedirectToAction("Index");
+            }
+            return View(r);
         }
     }
 }

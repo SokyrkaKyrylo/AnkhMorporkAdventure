@@ -3,5 +3,9 @@
     ViewBag.Title = "Assassins";
 }
 
-<h2>You came across a member of AssassinsGuild</h2>
+<h2>You came across a presenter of Ankh-Morpork Assassins' Guild</h2>
+<h3>He said that smb want's to kill and offer a help, u only should pay"</h3>
+
+@Html.ActionLink("Accept guild's help", "Offer", "Assassins", new { }, new { @class = "btn btn-secondary" })
+@Html.ActionLink("Refuse guild's help", "End", "Game", new { }, new { @class = "btn btn-secondary" })
 

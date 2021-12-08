@@ -142,7 +142,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AssassinsController.cs" />
     <Compile Include="Controllers\BeggarsController.cs" />
-    <Compile Include="Controllers\CityController.cs" />
+    <Compile Include="Controllers\GameController.cs" />
     <Compile Include="Controllers\FoolsController.cs" />
     <Compile Include="Controllers\TheivesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -150,6 +150,7 @@
     </Compile>
     <Compile Include="Infrastructure\DbManager.cs" />
     <Compile Include="Infrastructure\NinjectDependencyResolver.cs" />
+    <Compile Include="Models\RewardModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -172,6 +173,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\ankh-morpork.jpg" />
     <Content Include="Images\cityIcon.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -225,13 +227,14 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Assassins\Index.cshtml" />
-    <Content Include="Views\City\Index.cshtml" />
+    <Content Include="Views\Game\Index.cshtml" />
     <Content Include="Views\Beggars\Index.cshtml" />
+    <Content Include="Views\Fools\Index.cshtml" />
+    <Content Include="Views\Assassins\Result.cshtml" />
+    <Content Include="Views\Assassins\Offer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
-    <Folder Include="Views\Fools\" />
     <Folder Include="Views\Theives\" />
   </ItemGroup>
   <ItemGroup>

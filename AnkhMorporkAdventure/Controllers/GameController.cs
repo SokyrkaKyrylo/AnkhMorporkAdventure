@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace AnkhMorporkAdventure.Controllers
 {
-    public class CityController : Controller
+    public class GameController : Controller
     {
         public ActionResult Index()
         {
