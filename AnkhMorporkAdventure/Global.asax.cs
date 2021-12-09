@@ -1,4 +1,5 @@
 using AnkhMorporkAdventure.Domain;
+using AnkhMorporkAdventure.Domain.Concrete;
 using AnkhMorporkAdventure.Infrastructure;
 using System.Web.Mvc;
 using System.Web.Optimization;
@@ -14,6 +15,9 @@ namespace AnkhMorporkAdventure
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            
+            ModelBinders.Binders.Add(typeof(Player), new PlayerModelBinder());
+
 
             var dbContext = ApplicationContext.GetInstance();
             if (dbContext.Database.Exists())

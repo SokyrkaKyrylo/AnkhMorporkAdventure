@@ -1,9 +1,9 @@
 ﻿using AnkhMorporkAdventure.Domain;
+using AnkhMorporkAdventure.Domain.Abstract;
 using AnkhMorporkAdventure.Domain.Models;
-using OOPCourse.Domain.Abstract;
-using System.Collections.Generic;
+using System.Linq;
 
-namespace OOPCourse.Domain.Concrete
+namespace AnkhMorporkAdventure.Domain.Concrete
 {
     public class AssassinsRepo : IAssassinsRepo
     {
@@ -14,11 +14,17 @@ namespace OOPCourse.Domain.Concrete
             _context = context;
         }
 
-        public IEnumerable<Assassin> Assassins => _context.Assassins;
-
-        public void Save()
+        public Assassin GetAssassin(decimal reward)
         {
-            _context.SaveChanges();
-        }
+            var assassin = _context.Assassins
+                .AsEnumerable()
+                .FirstOrDefault(a => a.HighRewardBound >= reward && a.LowRewardBound <= reward);
+            if (assassin != null)
+            {
+                assassin.Status = false;
+                _context.SaveChanges();
+            }
+            return assassin;
+        }      
     }
 }

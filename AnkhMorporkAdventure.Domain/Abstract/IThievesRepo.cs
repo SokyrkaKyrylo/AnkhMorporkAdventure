@@ -1,10 +1,9 @@
 ﻿using AnkhMorporkAdventure.Domain.Models;
-using System.Collections.Generic;
 
-namespace OOPCourse.Domain.Abstract
+namespace AnkhMorporkAdventure.Domain.Abstract
 {
     public interface IThievesRepo
     {
-        IEnumerable<Thief> Thieves { get; }
+        Thief GetThief();
     }
 }

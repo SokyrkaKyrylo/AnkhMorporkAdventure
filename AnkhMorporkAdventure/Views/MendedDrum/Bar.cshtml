@@ -1,0 +1,47 @@
+﻿@model IEnumerable<AnkhMorporkAdventure.Domain.Models.Item>
+@{
+    ViewData["Title"] = "Bar";
+}
+
+<h2>Welcome to Mended Drum</h2>
+<br>
+<h4>Do u wanna to buy something?</h4>
+<table>
+    <thead>
+        <tr>
+            <td>
+                Name
+            </td>
+            <td>
+                Description
+            </td>
+            <td>
+                Price
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in @Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(m => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.Price)
+                </td>
+                <td>
+                    @using (Html.BeginForm("Buy", "MendedDrum"))
+                    {
+                        @Html.Hidden("id", item.Id)
+                        <input type="number" name="quantity" />
+                        <input class="btn btn-outline-secondary" type="submit" value="Buy">
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

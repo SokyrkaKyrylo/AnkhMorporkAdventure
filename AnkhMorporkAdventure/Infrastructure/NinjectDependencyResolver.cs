@@ -1,7 +1,7 @@
 ﻿using AnkhMorporkAdventure.Domain;
+using AnkhMorporkAdventure.Domain.Abstract;
+using AnkhMorporkAdventure.Domain.Concrete;
 using Ninject;
-using OOPCourse.Domain.Abstract;
-using OOPCourse.Domain.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
@@ -32,6 +32,9 @@ namespace AnkhMorporkAdventure.Infrastructure
                .WithConstructorArgument("context", dbContext);
 
             kernel.Bind<IFoolsRepo>().To<FoolsRepo>()
+               .WithConstructorArgument("context", dbContext);
+
+            kernel.Bind<IItemsRepo>().To<ItemsRepo>()
                .WithConstructorArgument("context", dbContext);
         }
 

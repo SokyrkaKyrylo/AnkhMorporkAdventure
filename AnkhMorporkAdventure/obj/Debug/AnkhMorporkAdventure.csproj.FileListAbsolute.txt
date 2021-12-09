@@ -81,7 +81,6 @@ C:\Users\kyrylo.sokyrka\Projects\AnkhMorporkAdventure\AnkhMorporkAdventure\bin\r
 C:\Users\kyrylo.sokyrka\Projects\AnkhMorporkAdventure\AnkhMorporkAdventure\bin\ru\System.Web.WebPages.Razor.resources.dll
 C:\Users\kyrylo.sokyrka\Projects\AnkhMorporkAdventure\AnkhMorporkAdventure\obj\Debug\AnkhMorporkAdventure.csproj.AssemblyReference.cache
 C:\Users\kyrylo.sokyrka\Projects\AnkhMorporkAdventure\AnkhMorporkAdventure\obj\Debug\AnkhMorporkAdventure.csproj.CoreCompileInputs.cache
-C:\Users\kyrylo.sokyrka\Projects\AnkhMorporkAdventure\AnkhMorporkAdventure\obj\Debug\AnkhMorporkAdventure.csproj.CopyComplete
 C:\Users\kyrylo.sokyrka\Projects\AnkhMorporkAdventure\AnkhMorporkAdventure\obj\Debug\AnkhMorporkAdventure.dll
 C:\Users\kyrylo.sokyrka\Projects\AnkhMorporkAdventure\AnkhMorporkAdventure\obj\Debug\AnkhMorporkAdventure.pdb
 C:\Users\kyrylo.sokyrka\Projects\AnkhMorporkAdventure\AnkhMorporkAdventure\bin\EntityFramework.dll
@@ -98,3 +97,4 @@ C:\Users\kyrylo.sokyrka\Projects\AnkhMorporkAdventure\AnkhMorporkAdventure\bin\N
 C:\Users\kyrylo.sokyrka\Projects\AnkhMorporkAdventure\AnkhMorporkAdventure\bin\AnkhMorporkAdventure.Domain.dll
 C:\Users\kyrylo.sokyrka\Projects\AnkhMorporkAdventure\AnkhMorporkAdventure\bin\AnkhMorporkAdventure.Domain.pdb
 C:\Users\kyrylo.sokyrka\Projects\AnkhMorporkAdventure\AnkhMorporkAdventure\bin\AnkhMorporkAdventure.Domain.dll.config
+C:\Users\kyrylo.sokyrka\Projects\AnkhMorporkAdventure\AnkhMorporkAdventure\obj\Debug\AnkhMorporkAdventure.csproj.CopyComplete

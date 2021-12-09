@@ -1,6 +1,5 @@
 ﻿using AnkhMorporkAdventure.Domain;
 using AnkhMorporkAdventure.Domain.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -59,6 +58,14 @@ namespace AnkhMorporkAdventure.Infrastructure
                 new Fool { Type = "Stupid fool", Salary = 7},
                 new Fool { Type = "Arch fool", Salary = 8},
                 new Fool { Type = "Complete fool", Salary = 10},
+            });
+
+            context.Products.AddRange(new List<Item>
+            {
+                new Item { Name="Beer", Description="Only beggars will buy it", Price=2},
+                new Item { Name="White Beer", Description="Only women will drink it", Price=5},
+                new Item { Name="Dark Beer", Description="Maded for true mans", Price=5},
+                new Item { Name="Vodka", Description="If u wanna to fight, this is your choice", Price=10}
             });
 
             context.SaveChanges();

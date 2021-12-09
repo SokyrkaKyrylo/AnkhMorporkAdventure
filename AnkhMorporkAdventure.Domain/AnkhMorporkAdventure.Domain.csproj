@@ -54,11 +54,15 @@
     <Compile Include="Abstract\IAssassinsRepo.cs" />
     <Compile Include="Abstract\IBeggarsRepo.cs" />
     <Compile Include="Abstract\IFoolsRepo.cs" />
+    <Compile Include="Abstract\IItemsRepo.cs" />
+    <Compile Include="Concrete\ItemsRepo.cs" />
+    <Compile Include="Models\Item.cs" />
     <Compile Include="Abstract\IThievesRepo.cs" />
     <Compile Include="ApplicationContext.cs" />
     <Compile Include="Concrete\AssassinsRepo.cs" />
     <Compile Include="Concrete\BeggarsRepo.cs" />
     <Compile Include="Concrete\FoolsRepo.cs" />
+    <Compile Include="Concrete\Inventory.cs" />
     <Compile Include="Concrete\Player.cs" />
     <Compile Include="Concrete\ThievesRepo.cs" />
     <Compile Include="Models\Assassin.cs" />

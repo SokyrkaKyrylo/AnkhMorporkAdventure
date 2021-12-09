@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace OOPCourse.Domain.Concrete
+namespace AnkhMorporkAdventure.Domain.Concrete
 {
     public class Player
     {
@@ -9,6 +9,7 @@ namespace OOPCourse.Domain.Concrete
             if (purse < 0)
                 throw new ArgumentException("Money can not be less than zero");
             Purse = purse;
+            Inventory = new Inventory();
         }
 
         public decimal Purse { get; private set; }
@@ -29,5 +30,7 @@ namespace OOPCourse.Domain.Concrete
             Purse -= sum;
             return true;
         }
+
+        public Inventory Inventory { get; set; }
     }
 }

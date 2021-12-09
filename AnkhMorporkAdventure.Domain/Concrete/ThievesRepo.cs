@@ -1,9 +1,10 @@
 ﻿using AnkhMorporkAdventure.Domain;
+using AnkhMorporkAdventure.Domain.Abstract;
 using AnkhMorporkAdventure.Domain.Models;
-using OOPCourse.Domain.Abstract;
-using System.Collections.Generic;
+using System;
+using System.Linq;
 
-namespace OOPCourse.Domain.Concrete
+namespace AnkhMorporkAdventure.Domain.Concrete
 {
     public class ThievesRepo : IThievesRepo
     {
@@ -14,6 +15,12 @@ namespace OOPCourse.Domain.Concrete
             _context = context;
         }
 
-        public IEnumerable<Thief> Thieves => _context.Thieves;
+        public Thief GetThief()
+        {
+            var rand = new Random();
+            var thieves = _context.Thieves.ToList();
+            return thieves
+                .FirstOrDefault(t => t.Id == rand.Next(1, thieves.Count));
+        }
     }
 }

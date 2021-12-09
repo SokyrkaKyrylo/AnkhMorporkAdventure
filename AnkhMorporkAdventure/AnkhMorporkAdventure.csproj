@@ -144,13 +144,18 @@
     <Compile Include="Controllers\BeggarsController.cs" />
     <Compile Include="Controllers\GameController.cs" />
     <Compile Include="Controllers\FoolsController.cs" />
-    <Compile Include="Controllers\TheivesController.cs" />
+    <Compile Include="Controllers\MendedDrumController.cs" />
+    <Compile Include="Controllers\ThievesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\DbManager.cs" />
     <Compile Include="Infrastructure\NinjectDependencyResolver.cs" />
+    <Compile Include="Infrastructure\PlayerModelBinder.cs" />
+    <Compile Include="Infrastructure\NumberOfTheftsManager.cs" />
+    <Compile Include="Models\ItemModel.cs" />
     <Compile Include="Models\RewardModel.cs" />
+    <Compile Include="Models\ThiefMeetingModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -229,13 +234,17 @@
     <Content Include="Views\Assassins\Index.cshtml" />
     <Content Include="Views\Game\Index.cshtml" />
     <Content Include="Views\Beggars\Index.cshtml" />
-    <Content Include="Views\Fools\Index.cshtml" />
+    <Content Include="Views\Fools\Meeting.cshtml" />
     <Content Include="Views\Assassins\Result.cshtml" />
     <Content Include="Views\Assassins\Offer.cshtml" />
+    <Content Include="Views\Thieves\Meeting.cshtml" />
+    <Content Include="Views\Game\End.cshtml" />
+    <Content Include="Views\MendedDrum\Bar.cshtml" />
+    <Content Include="Views\Game\Info.cshtml" />
+    <Content Include="Views\Game\Inventory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Theives\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

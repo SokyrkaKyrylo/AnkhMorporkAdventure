@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using AnkhMorporkAdventure.Domain.Concrete;
+using AnkhMorporkAdventure.Infrastructure;
+using System;
 using System.Web.Mvc;
 
 namespace AnkhMorporkAdventure.Controllers
@@ -21,12 +20,36 @@ namespace AnkhMorporkAdventure.Controllers
                 case 1:
                     return RedirectToAction("Index", "Assassins");
                 case 2:
-                    return RedirectToAction("Index", "Thieves");
+                    return RedirectToAction("Meeting", "Thieves");
                 case 3:
-                    return RedirectToAction("Index", "Beggars");
+                    return RedirectToAction("Meeting", "Beggars");
                 case 4:
-                    return RedirectToAction("Index", "Fools");
+                    return RedirectToAction("Meeting", "Fools");
             }
         }
+
+        public ActionResult End(string message)
+        {
+            return View("End", model: message);
+        }
+
+        public ActionResult Restart(Player player)
+        {
+            var neededSum = 100 - player.Purse;
+            player.AddMoney(neededSum);
+            NumberOfTheftsManager.NumberOfThefts = 6;
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Info(Player player)
+        {
+            return PartialView(player);
+        }
+
+        public ActionResult Inventory(Player player)
+        {
+            return PartialView(player.Inventory);
+        }
+
     }
 }

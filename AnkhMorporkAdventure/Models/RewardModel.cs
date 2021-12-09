@@ -3,9 +3,8 @@
 namespace AnkhMorporkAdventure.Models
 {
     public class RewardModel
-    {        
-        [Range(0,999.99)]
-        [DataType(DataType.Currency)]
-        public int? Reward { get; set; }
+    {
+        [Required]
+        public int Reward { get; set; }
     }
 }

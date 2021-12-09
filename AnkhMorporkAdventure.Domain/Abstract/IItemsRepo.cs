@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 namespace AnkhMorporkAdventure.Domain.Abstract
 {
-    public interface IFoolsRepo
+    public interface IItemsRepo
     {
-        IEnumerable<Fool> Fools { get; }
+        IEnumerable<Item> Items { get; }
     }
 }

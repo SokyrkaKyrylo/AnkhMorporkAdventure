@@ -1,9 +1,9 @@
 ﻿using AnkhMorporkAdventure.Domain;
+using AnkhMorporkAdventure.Domain.Abstract;
 using AnkhMorporkAdventure.Domain.Models;
-using OOPCourse.Domain.Abstract;
 using System.Collections.Generic;
 
-namespace OOPCourse.Domain.Concrete
+namespace AnkhMorporkAdventure.Domain.Concrete
 {
     public class BeggarsRepo : IBeggarsRepo
     {
