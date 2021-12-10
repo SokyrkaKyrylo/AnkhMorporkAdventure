@@ -153,8 +153,6 @@
     <Compile Include="Infrastructure\NinjectDependencyResolver.cs" />
     <Compile Include="Infrastructure\PlayerModelBinder.cs" />
     <Compile Include="Infrastructure\NumberOfTheftsManager.cs" />
-    <Compile Include="Models\ItemModel.cs" />
-    <Compile Include="Models\RewardModel.cs" />
     <Compile Include="Models\ThiefMeetingModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -179,7 +177,10 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\ankh-morpork.jpg" />
+    <Content Include="Images\assassins-guild.jpg" />
     <Content Include="Images\cityIcon.png" />
+    <Content Include="Images\contract.jpg" />
+    <Content Include="Images\mendedDrum.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -236,12 +237,12 @@
     <Content Include="Views\Beggars\Index.cshtml" />
     <Content Include="Views\Fools\Meeting.cshtml" />
     <Content Include="Views\Assassins\Result.cshtml" />
-    <Content Include="Views\Assassins\Offer.cshtml" />
     <Content Include="Views\Thieves\Meeting.cshtml" />
     <Content Include="Views\Game\End.cshtml" />
     <Content Include="Views\MendedDrum\Bar.cshtml" />
     <Content Include="Views\Game\Info.cshtml" />
     <Content Include="Views\Game\Inventory.cshtml" />
+    <Content Include="Views\Assassins\Contract.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

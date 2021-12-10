@@ -1,7 +1,17 @@
-﻿
+﻿@model AnkhMorporkAdventure.Domain.Models.Beggar
 @{
     ViewBag.Title = "Beggars";
 }
 
 <h2>You came across a member of Ankh-Morpork Beggars' Guild</h2>
+<h3>This is @Model.Type! He ask a help in size of @Model.Fee <h3>
+@if (Model.Type == "People With Placards Saying \"Why lie? I need a beer.\"")
+{
+    @Html.ActionLink("Give a bear", "Bear", "Beggars", new { }, new { @class = "btn btn-secondary" })
+}
+else
+{
+    @Html.ActionLink("Help him", "Fee", "Beggars", new { fee = Model.Fee }, new { @class = "btn btn-secondary" })
+}
 
+@Html.ActionLink("Refuse", "End", "Game", new { }, new { @class = "btn btn-secondary" })

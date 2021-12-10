@@ -2,6 +2,7 @@
 using AnkhMorporkAdventure.Domain.Abstract;
 using AnkhMorporkAdventure.Domain.Models;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace AnkhMorporkAdventure.Domain.Concrete
 {
@@ -14,6 +15,13 @@ namespace AnkhMorporkAdventure.Domain.Concrete
             _context = context;
         }
 
-        public IEnumerable<Beggar> Beggars => _context.Beggars;
+        public Beggar GetBeggar()
+        {
+            var rand = new System.Random();
+            var beggars = _context.Beggars.ToList();
+            int res = rand.Next(1, beggars.Count + 1);
+            return beggars
+                .FirstOrDefault(t => t.Id == res);
+        }
     }
 }

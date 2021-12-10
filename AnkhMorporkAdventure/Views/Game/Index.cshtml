@@ -1,4 +1,4 @@
-﻿
+﻿@model string
 @{
     ViewData["Title"] = "Main City";
 }
@@ -12,7 +12,21 @@
     <div class="col-md-3">
         <div class="d-grid gap-2">
             @Html.ActionLink("Wander across the city", "Wander", new { }, new { @class = "btn btn-secondary btn-lg" })
-            @Html.ActionLink("Visit the Mended Drum", "Bar","MendedDrum", new { }, new { @class = "btn btn-secondary btn-lg" })
-        </div>       
+            @Html.ActionLink("Visit the Mended Drum", "Bar", "MendedDrum", new { }, new { @class = "btn btn-secondary btn-lg" })
+        </div>
     </div>
 </div>
+
+@if (Model != null)
+{
+    @section scripts
+        {
+        <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                alert("U should know it");
+            });
+        </script>
+    }
+}

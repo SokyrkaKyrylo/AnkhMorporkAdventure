@@ -17,8 +17,10 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <div class="d-flex">
             @Html.Action("Info", "Game")
-            @Html.ActionLink("Inventory", "Inventory", "Game", new {}, new { @class="compItem"})
+            @Html.ActionLink("Inventory", "Inventory", "Game", new {}, new { @class="compItem btn btn-outline-light"})
+                </div>
         </div>
     </div>
     <div class="container body-content" style="margin-top:10px">
@@ -28,11 +30,9 @@
     <script src="~/Scripts/bootstrap.min.js"></script>
     @RenderSection("scripts", required: false)
 </body>
-
 <div id="modDialog" class="modal fade">
     <div id="dialogContent" class="modal-dialog"></div>
 </div>
-
 </html>
 
 <script type="text/javascript">

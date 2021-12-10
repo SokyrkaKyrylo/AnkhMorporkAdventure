@@ -31,7 +31,11 @@ namespace AnkhMorporkAdventure.Controllers
                 return RedirectToAction("End", "Game",
                     new { message = "You ask on credit, but this is Ankh-Morpork, they just kill u and get all money" });
 
-            player.Inventory.AddItem(item, quantity);
+            string errorMessage = "";
+            if ((errorMessage = player.Inventory.AddItem(item, quantity)) != "")
+            {
+                return RedirectToAction("Index", "Game", routeValues: new { errorMessage  = errorMessage} );
+            }
             
             return RedirectToAction("Index", "Game");
         }

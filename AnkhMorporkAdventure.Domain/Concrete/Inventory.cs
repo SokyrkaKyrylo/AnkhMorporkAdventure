@@ -1,34 +1,43 @@
 ﻿using AnkhMorporkAdventure.Domain.Models;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace AnkhMorporkAdventure.Domain.Concrete
 {
     public class Inventory
     {
+        public Dictionary<Item, int> Items { get; private set; }
+        
         public Inventory()
         {
             Items = new Dictionary<Item, int>();
         }
 
-        public void AddItem(Item item, int count)
+        public string AddItem(Item item, int count)
         {
-            if (count <= 0)
-                return;
+            if (count <= 0 || count > 2)
+                return "Incorrect quanitty of items";
 
             if (Items.ContainsKey(item)) 
             {
-                Items[item] += count;
-                return;
+                if (Items[item] == 2)
+                    return "You backpack can only held 2 pints of each";                 
+                
+                Items[item] += count;                
+                return "";
             }
 
             Items.Add(item, count);
+            return "";
         }
 
-        public bool GetItem(Item item)
+        public bool GetItem(string name)
         {
-            if (!Items.ContainsKey(item))
-                return false;
+            var item = Items.Keys.FirstOrDefault(i => i.Name == name);
 
+            if (item == null)
+                return false;
+            
             if (Items[item] > 1)
             {
                 Items[item]--;
@@ -39,6 +48,6 @@ namespace AnkhMorporkAdventure.Domain.Concrete
             return true;
         }
 
-        public Dictionary<Item, int> Items { get; private set; }
+      
     }
 }

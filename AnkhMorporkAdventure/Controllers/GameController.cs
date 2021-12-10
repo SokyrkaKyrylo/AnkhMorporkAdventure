@@ -7,22 +7,22 @@ namespace AnkhMorporkAdventure.Controllers
 {
     public class GameController : Controller
     {
-        public ActionResult Index()
+        public ActionResult Index(string errorMessage)
         {
-            return View();
+            return View("Index",model: errorMessage);
         }
 
         public ActionResult Wander()
         {
             var random = new Random();
-            switch (1)
+            switch (3)
             {
                 case 1:
                     return RedirectToAction("Index", "Assassins");
                 case 2:
-                    return RedirectToAction("Meeting", "Thieves");
+                    return RedirectToAction("Index", "Thieves");
                 case 3:
-                    return RedirectToAction("Meeting", "Beggars");
+                    return RedirectToAction("Index", "Beggars");
                 case 4:
                     return RedirectToAction("Meeting", "Fools");
             }

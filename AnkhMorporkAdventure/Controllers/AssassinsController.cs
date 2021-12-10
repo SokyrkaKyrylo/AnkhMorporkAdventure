@@ -19,35 +19,27 @@ namespace AnkhMorporkAdventure.Controllers
             return View();
         }
 
-        [HttpGet]
-        public ActionResult Offer()
+        public ActionResult Contract()
         {
             return View();
         }
-
+           
         [HttpPost]
-        public ActionResult Confirm(RewardModel r, Player player)
+        public ActionResult Contract(int reward, Player player)
         {
-            if (r == null)
-                return HttpNotFound();
+            var assassin = _assassins.GetAssassin(reward);
 
-            if (ModelState.IsValid)
+            if (assassin == null)
+                return RedirectToAction("End", "Game",
+                    routeValues: new { message = "Sorry, but we don't have killer who will make this job for this reward" });
+
+            if (!player.GetMoney(reward))
             {
-                var assassin = _assassins.GetAssassin(r.Reward);
-
-                if (assassin == null)
-                    return RedirectToAction("End", "Game",
-                        routeValues: new { message = "Sorry, but we don't have killer who will make this job for this reward" });
-
-                if (!player.GetMoney(r.Reward))
-                {
-                    return RedirectToAction("End", "Game",
-                       routeValues: new { message = "Ha, u decided to treat us, so u are dead man" });
-                }
-
-                return View("Result", assassin);
+                return RedirectToAction("End", "Game",
+                   routeValues: new { message = "Ha, u decided to treat us, so u are dead man" });
             }
-            return View(r);
+
+            return PartialView("Result", assassin);
         }
     }
 }
