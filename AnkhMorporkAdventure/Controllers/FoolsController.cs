@@ -1,4 +1,8 @@
 ﻿using AnkhMorporkAdventure.Domain.Abstract;
+using AnkhMorporkAdventure.Domain.Concrete;
+using AnkhMorporkAdventure.Domain.Models;
+using AnkhMorporkAdventure.Infrastructure;
+using AnkhMorporkAdventure.Models;
 using System.Web.Mvc;
 
 namespace AnkhMorporkAdventure.Controllers
@@ -12,9 +16,21 @@ namespace AnkhMorporkAdventure.Controllers
             _fools = fools;
         }
 
-        public ActionResult Index()
+        public ActionResult FoolsIndex()
         {
-            return View();
+            var fool = _fools.GetFool();
+            return View(fool);
+        }
+
+        public ActionResult Offer(Fool fool, Player player)
+        {
+            player.AddMoney(fool.Salary);
+            return RedirectToAction("Index", "Game", new GameIndexMessageModel
+            {
+                Title = "Congrats",
+                Message = $"You have earned {MoneyConvertor.Convert(fool.Salary)}",
+                Died = false
+            });
         }
     }
 }

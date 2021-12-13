@@ -23,5 +23,6 @@ namespace AnkhMorporkAdventure.Domain
                 _context = new ApplicationContext();
             return _context;
         }
+        
     }
 }

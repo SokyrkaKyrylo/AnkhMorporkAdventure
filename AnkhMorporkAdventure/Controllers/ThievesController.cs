@@ -15,26 +15,32 @@ namespace AnkhMorporkAdventure.Controllers
             _thieves = thieves;
         }
 
-        public ActionResult Meeting()
-        {
-            ThiefMeetingModel model = new ThiefMeetingModel();
-            
+        public ActionResult ThievesIndex()
+        {            
             if (NumberOfTheftsManager.NumberOfThefts == 0)
             {
-                model.Message = "Wandering in downtown u came across a stranger who wish u a good luck";
-                return View("Meeting", model: model);
+                return RedirectToAction("Index", "Game", new GameIndexMessageModel
+                {
+                    Title = "Have a nice day",
+                    Message = "Wandering through city u came accross a stranger who wish u a good luck",
+                    Died = false
+                });
             }
 
             NumberOfTheftsManager.NumberOfThefts--;
-            model.Thief = _thieves.GetThief();
+            var thief = _thieves.GetThief();
             
-            return View("Meeting", model: model);
+            return View(thief);
         }
         
         public ActionResult Confirm(Player player)
         {
             if (!player.GetMoney(10))
-                return RedirectToAction("End", "Game", new { message = "You died" });
+                return RedirectToAction("Index", "Game", new GameIndexMessageModel { 
+                    Title = "You died",
+                    Message = "U try to fool a thief guild, it leaded to your death",
+                    Died = true                    
+                });
             return RedirectToAction("Index", "Game");
         }
     }

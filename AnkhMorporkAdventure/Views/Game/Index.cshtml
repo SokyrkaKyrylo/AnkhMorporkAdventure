@@ -1,4 +1,4 @@
-﻿@model string
+﻿@model AnkhMorporkAdventure.Models.GameIndexMessageModel
 @{
     ViewData["Title"] = "Main City";
 }
@@ -17,15 +17,37 @@
     </div>
 </div>
 
-@if (Model != null)
+<div class="modal fade" data-bs-backdrop="static" id="dialogModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">@Model.Title</h5>
+            </div>
+            <div class="modal-body">
+                @Model.Message
+            </div>
+            <div class="modal-footer">
+                @if (Model.Died)
+                {
+                    @Html.ActionLink("Restart Game", "Restart", "Game", new {}, 
+                   new { @class="btn btn-secondary"})
+                }
+                else
+                {
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Go on playing</button>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (Model.Message != null)
 {
     @section scripts
         {
-        <script src="~/Scripts/jquery-3.4.1.min.js"></script>
-        <script src="~/Scripts/bootstrap.min.js"></script>
-        <script>
+        <script type="text/javascript">
             $(document).ready(function () {
-                alert("U should know it" + @Model);
+                $("#dialogModal").modal('show');
             });
         </script>
     }

@@ -18,9 +18,9 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="d-flex">
-            @Html.Action("Info", "Game")
-            @Html.ActionLink("Inventory", "Inventory", "Game", new {}, new { @class="compItem btn btn-outline-light"})
-                </div>
+                @Html.Action("Info", "Game")
+                @Html.ActionLink("Inventory", "Inventory", "Game", new { }, new { @class = "compItem btn btn-outline-light" })
+            </div>
         </div>
     </div>
     <div class="container body-content" style="margin-top:10px">
@@ -28,11 +28,14 @@
     </div>
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+
     @RenderSection("scripts", required: false)
+
+    <div id="modDialog" class="modal fade" aria-hidden="true">
+        <div id="dialogContent" class="modal-dialog"></div>
+    </div>
 </body>
-<div id="modDialog" class="modal fade">
-    <div id="dialogContent" class="modal-dialog"></div>
-</div>
 </html>
 
 <script type="text/javascript">

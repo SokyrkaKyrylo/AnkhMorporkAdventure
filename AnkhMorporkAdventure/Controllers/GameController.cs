@@ -1,5 +1,6 @@
 ﻿using AnkhMorporkAdventure.Domain.Concrete;
 using AnkhMorporkAdventure.Infrastructure;
+using AnkhMorporkAdventure.Models;
 using System;
 using System.Web.Mvc;
 
@@ -7,32 +8,30 @@ namespace AnkhMorporkAdventure.Controllers
 {
     public class GameController : Controller
     {
-        public ActionResult Index(string errorMessage)
+        public ActionResult Index(GameIndexMessageModel model)
         {
-            return View("Index",model: errorMessage);
+            if (model == null)
+                return View("Index", null);
+            return View("Index", model);
         }
 
         public ActionResult Wander()
         {
             var random = new Random();
-            switch (3)
+            switch (random.Next(1,5))
             {
                 case 1:
-                    return RedirectToAction("Index", "Assassins");
+                    return RedirectToAction("AssassinsIndex", "Assassins");
                 case 2:
-                    return RedirectToAction("Index", "Thieves");
+                    return RedirectToAction("ThievesIndex", "Thieves");
                 case 3:
-                    return RedirectToAction("Index", "Beggars");
+                    return RedirectToAction("BeggarsIndex", "Beggars");
                 case 4:
-                    return RedirectToAction("Meeting", "Fools");
+                    return RedirectToAction("FoolsIndex", "Fools");
             }
+            return View("Index", null);
         }
-
-        public ActionResult End(string message)
-        {
-            return View("End", model: message);
-        }
-
+      
         public ActionResult Restart(Player player)
         {
             var neededSum = 100 - player.Purse;

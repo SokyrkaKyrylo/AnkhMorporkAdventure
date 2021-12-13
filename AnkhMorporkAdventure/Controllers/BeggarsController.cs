@@ -1,5 +1,6 @@
 ﻿using AnkhMorporkAdventure.Domain.Abstract;
 using AnkhMorporkAdventure.Domain.Concrete;
+using AnkhMorporkAdventure.Models;
 using System.Web.Mvc;
 
 namespace AnkhMorporkAdventure.Controllers
@@ -13,22 +14,30 @@ namespace AnkhMorporkAdventure.Controllers
             _beggars = beggarsRepo;
         }
 
-        public ActionResult Index()
+        public ActionResult BeggarsIndex()
         {
             var beggar = _beggars.GetBeggar();
             return View(beggar);
         }
 
-        public ActionResult Bear(Player player)
+        public ActionResult Beer(Player player)
         {
             var result = player.Inventory.GetItem("Bear");
 
             if (result)
-                return View("Index", "Game");
-            return RedirectToAction("End", "Game", new
+                return View("Index", "Game", new GameIndexMessageModel
+                {
+                    Title = "Have a nice day",
+                    Message = "A beggar, whom u gave a beer, tell u a funny history and wish a good luck",
+                    Died = false
+                });
+
+            return RedirectToAction("Index", "Game", new GameIndexMessageModel
             {
-                message = "You don't have bear in your inventory, " +
-                "so this beggar chased u to death"
+                Title = "You are dead",
+                Message = "You don't have bear in your inventory, " +
+                "so this beggar chased u to death",
+                Died = true
             });
         }
 
@@ -36,10 +45,12 @@ namespace AnkhMorporkAdventure.Controllers
         {
             if (!player.GetMoney(fee))
             {
-                return RedirectToAction("End", "Game", new
+                return RedirectToAction("Index", "Game", new GameIndexMessageModel
                 {
-                    message = "You don't have enough money to give him " +
-               "so this beggar chased u to death ("
+                    Title = "You are dead",
+                    Message = "You don't have enough money to give him " +
+                            "so this beggar chased u to death (",
+                    Died = true
                 });
             }
             return RedirectToAction("Index", "Game");

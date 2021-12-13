@@ -14,32 +14,48 @@ namespace AnkhMorporkAdventure.Controllers
             this._assassins = assassins;
         }
 
-        public ActionResult Index()
+        public ActionResult AssassinsIndex()
         {
-            return View();
+            return View("AssassinsIndex");
         }
 
         public ActionResult Contract()
         {
             return View();
         }
-           
+        
         [HttpPost]
         public ActionResult Contract(int reward, Player player)
         {
             var assassin = _assassins.GetAssassin(reward);
 
             if (assassin == null)
-                return RedirectToAction("End", "Game",
-                    routeValues: new { message = "Sorry, but we don't have killer who will make this job for this reward" });
+                return RedirectToAction("Index", "Game",
+                   new GameIndexMessageModel
+                   {
+                       Title = "You died",
+                       Message = "Sorry, but we don't have killer who will make this job for this reward",
+                       Died = false
+                   });
 
             if (!player.GetMoney(reward))
             {
-                return RedirectToAction("End", "Game",
-                   routeValues: new { message = "Ha, u decided to treat us, so u are dead man" });
+                return RedirectToAction("Index", "Game",
+                    new GameIndexMessageModel
+                    {
+                        Title = "You died",
+                        Message = "Ha, u decided to treat us, so u are dead man",
+                        Died = true
+                    });
             }
 
-            return PartialView("Result", assassin);
+            return RedirectToAction("Index", "Game",
+                new GameIndexMessageModel
+                {
+                    Title = "Contract was successfully signed",
+                    Message = $"{assassin.Name} will find to discuss some details",
+                    Died = false
+                });
         }
     }
 }

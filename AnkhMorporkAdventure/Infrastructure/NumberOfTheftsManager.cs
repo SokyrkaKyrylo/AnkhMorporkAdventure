@@ -2,7 +2,7 @@
 {
     public static class NumberOfTheftsManager
     {
-        private static int _value = 1;
+        private static int _value = 6;
 
         public static int NumberOfThefts
         {
