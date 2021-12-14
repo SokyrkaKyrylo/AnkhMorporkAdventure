@@ -19,8 +19,9 @@ namespace AnkhMorporkAdventure.Domain.Concrete
         {
             var rand = new Random();
             var thieves = _context.Thieves.ToList();
+            var item = rand.Next(1, thieves.Count);
             return thieves
-                .FirstOrDefault(t => t.Id == rand.Next(1, thieves.Count));
+                .FirstOrDefault(t => t.Id == item);
         }
     }
 }

@@ -21,20 +21,20 @@ namespace AnkhMorporkAdventure.Infrastructure
         private void AddBindings()
         {
             var dbContext = ApplicationContext.GetInstance();
-            
-            kernel.Bind<IAssassinsRepo>().To<AssassinsRepo>()
+
+            kernel.Bind<IAssassinsRepo>().To<AssassinsRepo>().InSingletonScope()
                 .WithConstructorArgument("context", dbContext);
 
-            kernel.Bind<IThievesRepo>().To<ThievesRepo>()
+            kernel.Bind<IThievesRepo>().To<ThievesRepo>().InSingletonScope()
                 .WithConstructorArgument("context", dbContext);
 
-            kernel.Bind<IBeggarsRepo>().To<BeggarsRepo>()
+            kernel.Bind<IBeggarsRepo>().To<BeggarsRepo>().InSingletonScope()
                .WithConstructorArgument("context", dbContext);
 
-            kernel.Bind<IFoolsRepo>().To<FoolsRepo>()
+            kernel.Bind<IFoolsRepo>().To<FoolsRepo>().InSingletonScope()
                .WithConstructorArgument("context", dbContext);
 
-            kernel.Bind<IItemsRepo>().To<ItemsRepo>()
+            kernel.Bind<IItemsRepo>().To<ItemsRepo>().InSingletonScope()
                .WithConstructorArgument("context", dbContext);
         }
 

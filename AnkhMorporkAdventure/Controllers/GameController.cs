@@ -34,8 +34,8 @@ namespace AnkhMorporkAdventure.Controllers
       
         public ActionResult Restart(Player player)
         {
-            var neededSum = 100 - player.Purse;
-            player.AddMoney(neededSum);
+            player.GetMoney(player.Purse);
+            player.AddMoney(100);
             NumberOfTheftsManager.NumberOfThefts = 6;
             return RedirectToAction("Index");
         }

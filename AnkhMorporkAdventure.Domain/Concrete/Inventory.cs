@@ -20,7 +20,7 @@ namespace AnkhMorporkAdventure.Domain.Concrete
 
             if (Items.ContainsKey(item)) 
             {
-                if (Items[item] > 2)
+                if (Items[item] >= 2)
                     return "You backpack can only held 2 numbers of each item";                 
                 
                 Items[item] += count;                

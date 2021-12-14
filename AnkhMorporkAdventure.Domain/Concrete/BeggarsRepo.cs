@@ -19,7 +19,7 @@ namespace AnkhMorporkAdventure.Domain.Concrete
         {
             var rand = new System.Random();
             var beggars = _context.Beggars.ToList();
-            int res = rand.Next(1, beggars.Count + 1);
+            int res = rand.Next(1, beggars.Count);
             return beggars
                 .FirstOrDefault(t => t.Id == res);
         }
