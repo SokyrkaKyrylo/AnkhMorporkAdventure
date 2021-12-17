@@ -1,0 +1,46 @@
+﻿
+<h2>Contract</h2>
+<br />
+
+<div class="row">
+    <div class="col-5">
+        <img src="~/Images/contract.jpg" class="img-thumbnail" alt="...">
+    </div>
+    <div class="col-auto">
+        @using (Html.BeginForm("Contract", "Assassins", FormMethod.Post))
+        {
+            @Html.ValidationSummary(true)
+
+            <div class="form-horizontal">
+                <div class="form-group mb-3">
+                    <label class="form-label">Enter reward</label>
+                    <div class="col-md-10 mb-2">
+                        <input type="number" class="form-control" min="1" name="reward">
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-secondary">Give a reward</button>
+        }
+    </div>
+</div>
+
+<div id="modDialog" class="modal fade">
+    <div id="dialogContent" class="modal-dialog"></div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $.ajaxSetup({ cache: false });
+        $(".compItem").click(function (e) {
+
+            e.preventDefault();
+            $.get(this.href, function (data) {
+                $('#dialogContent').html(data);
+                $('#modDialog').modal('show');
+            });
+        });
+    })
+</script>
+
+
+

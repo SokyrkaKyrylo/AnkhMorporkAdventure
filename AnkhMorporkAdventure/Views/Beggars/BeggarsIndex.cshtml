@@ -1,0 +1,32 @@
+﻿@using AnkhMorporkAdventure.Models;
+@using AnkhMorporkAdventure.Infrastructure;
+@model AnkhMorporkAdventure.Domain.Models.Beggar
+@{
+    ViewBag.Title = "Beggars";
+}
+<br />
+<div class="row">
+    <div class="col-6">
+
+        <h2>You came across a member of Ankh-Morpork Beggars' Guild</h2>
+        <h3>He is @Model.Type! He ask a help in size of @MoneyConvertor.Convert(@Model.Fee) </h3>
+        @if (Model.Type == "People With Placards Saying \"Why lie? I need a beer.\"")
+        {
+            @Html.ActionLink("Give a beer", "Beer", "Beggars", new { }, new { @class = "btn btn-secondary" })
+        }
+        else
+        {
+            @Html.ActionLink("Help him", "Fee", "Beggars", new { fee = Model.Fee }, new { @class = "btn btn-secondary" })
+        }
+
+        @Html.ActionLink("Refuse", "Index", "Game", new GameIndexMessageModel
+        {
+            Title = "You died",
+            Message = "This beggar chased u to death",
+            Died = true
+        }, new { @class = "btn btn-secondary" })
+    </div>
+    <div class="col-6">
+        <img src="~/Images/beggar.jpg" class="img" alt="...">>
+    </div>
+</div>
