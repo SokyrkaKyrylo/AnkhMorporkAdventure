@@ -1,4 +1,5 @@
 ﻿using AnkhMorporkAdventure.Domain.Abstract;
+using AnkhMorporkAdventure.Domain.Abstract.Guilds;
 using AnkhMorporkAdventure.Domain.Concrete;
 using AnkhMorporkAdventure.Models;
 using System.Web.Mvc;
@@ -7,13 +8,6 @@ namespace AnkhMorporkAdventure.Controllers
 {
     public class AssassinsController : Controller
     {
-        private readonly IAssassinsRepo _assassins;
-
-        public AssassinsController(IAssassinsRepo assassins)
-        {
-            this._assassins = assassins;
-        }
-
         public ActionResult AssassinsIndex()
         {
             return View("AssassinsIndex");
@@ -25,9 +19,9 @@ namespace AnkhMorporkAdventure.Controllers
         }
         
         [HttpPost]
-        public ActionResult Contract(int reward, Player player)
+        public ActionResult Contract(int reward, Player player, IAssassinGuild assassins)
         {
-            var assassin = _assassins.GetAssassin(reward);
+            var assassin = assassins.GetAssassin(reward);
 
             if (assassin == null)
                 return RedirectToAction("Index", "Game",

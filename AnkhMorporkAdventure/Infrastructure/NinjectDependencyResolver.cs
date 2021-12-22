@@ -22,18 +22,6 @@ namespace AnkhMorporkAdventure.Infrastructure
         {
             var dbContext = ApplicationContext.GetInstance();
 
-            kernel.Bind<IAssassinsRepo>().To<AssassinsRepo>().InSingletonScope()
-                .WithConstructorArgument("context", dbContext);
-
-            kernel.Bind<IThievesRepo>().To<ThievesRepo>().InSingletonScope()
-                .WithConstructorArgument("context", dbContext);
-
-            kernel.Bind<IBeggarsRepo>().To<BeggarsRepo>().InSingletonScope()
-               .WithConstructorArgument("context", dbContext);
-
-            kernel.Bind<IFoolsRepo>().To<FoolsRepo>().InSingletonScope()
-               .WithConstructorArgument("context", dbContext);
-
             kernel.Bind<IItemsRepo>().To<ItemsRepo>().InSingletonScope()
                .WithConstructorArgument("context", dbContext);
         }

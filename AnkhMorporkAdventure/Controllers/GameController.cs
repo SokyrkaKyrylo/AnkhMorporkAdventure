@@ -8,8 +8,13 @@ namespace AnkhMorporkAdventure.Controllers
 {
     public class GameController : Controller
     {
-        public ActionResult Index(GameIndexMessageModel model)
+        public ActionResult Index(GameIndexMessageModel model, Player player)
         {
+            if ((int)player.Purse <= 0) 
+                return View(new GameIndexMessageModel { 
+                    Died = true, 
+                    Title = "You are dead",
+                    Message = "You dont have enough money to live"});
             if (model == null)
                 return View("Index", null);
             return View("Index", model);

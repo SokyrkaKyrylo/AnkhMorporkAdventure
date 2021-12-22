@@ -1,4 +1,5 @@
 ﻿using AnkhMorporkAdventure.Domain.Abstract;
+using AnkhMorporkAdventure.Domain.Abstract.Guilds;
 using AnkhMorporkAdventure.Domain.Concrete;
 using AnkhMorporkAdventure.Models;
 using System.Web.Mvc;
@@ -6,17 +7,10 @@ using System.Web.Mvc;
 namespace AnkhMorporkAdventure.Controllers
 {
     public class BeggarsController : Controller
-    {
-        private IBeggarsRepo _beggars;
-
-        public BeggarsController(IBeggarsRepo beggarsRepo)
+    {       
+        public ActionResult BeggarsIndex(IBeggarGuild beggars)
         {
-            _beggars = beggarsRepo;
-        }
-
-        public ActionResult BeggarsIndex()
-        {
-            var beggar = _beggars.GetBeggar();
+            var beggar = beggars.GetBeggar();
             return View(beggar);
         }
 

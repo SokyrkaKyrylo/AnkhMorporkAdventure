@@ -70,17 +70,6 @@ namespace AnkhMorporkAdventure.Infrastructure
 
             context.SaveChanges();
         }
-
-        public static void RefershDb(ApplicationContext context)
-        {
-            var asssinsToUpdate = context.Assassins.Where(a => !a.Status).ToList();
-            foreach (var item in asssinsToUpdate)
-            {
-                context.Assassins.Remove(item);
-                item.Status = true;
-                context.Assassins.Add(item);
-            }
-            context.SaveChanges();
-        }
+        
     }
 }

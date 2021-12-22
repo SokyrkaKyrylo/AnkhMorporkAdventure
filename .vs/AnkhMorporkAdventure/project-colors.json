@@ -15,7 +15,27 @@
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "Прочие файлы",
       "ColorIndex": -1
+    },
+    "4c33b113-ea11-48b2-88cc-be773383b0f5": {
+      "ProjectGuid": "4c33b113-ea11-48b2-88cc-be773383b0f5",
+      "DisplayName": "AnkhMorporkAdvenure.Tests",
+      "ColorIndex": 2
+    },
+    "a8bdab1d-b936-475e-8962-f5a5014cadf4": {
+      "ProjectGuid": "a8bdab1d-b936-475e-8962-f5a5014cadf4",
+      "DisplayName": "AnkhMorporkAdventure.Tests",
+      "ColorIndex": 3
+    },
+    "641e273e-843d-4881-85f7-594edf9b3124": {
+      "ProjectGuid": "641e273e-843d-4881-85f7-594edf9b3124",
+      "DisplayName": "AnkhMorporkAdventure.Tests",
+      "ColorIndex": 4
+    },
+    "fe7d30f0-6afb-4772-ad92-2cbd98fb18f5": {
+      "ProjectGuid": "fe7d30f0-6afb-4772-ad92-2cbd98fb18f5",
+      "DisplayName": "AnkhMorporkAdventure.Tests",
+      "ColorIndex": 5
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 6
 }

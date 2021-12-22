@@ -51,20 +51,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstract\IAssassinsRepo.cs" />
-    <Compile Include="Abstract\IBeggarsRepo.cs" />
-    <Compile Include="Abstract\IFoolsRepo.cs" />
-    <Compile Include="Abstract\IItemsRepo.cs" />
-    <Compile Include="Concrete\ItemsRepo.cs" />
+    <Compile Include="Abstract\Guilds\IAssassinGuild.cs" />
+    <Compile Include="Abstract\Guilds\IBeggarGuild.cs" />
+    <Compile Include="Abstract\Guilds\IThiefGuild.cs" />
+    <Compile Include="Abstract\Guilds\IFoolGuild.cs" />
+    <Compile Include="Abstract\Repos\IItemsRepo.cs" />
+    <Compile Include="Concrete\Guilds\AssassinsGuild.cs" />
+    <Compile Include="Concrete\Guilds\BeggarGuild.cs" />
+    <Compile Include="Concrete\Guilds\FoolGuild.cs" />
+    <Compile Include="Concrete\Guilds\ThiefGuild.cs" />
+    <Compile Include="Concrete\Repos\ItemsRepo.cs" />
     <Compile Include="Models\Item.cs" />
-    <Compile Include="Abstract\IThievesRepo.cs" />
     <Compile Include="ApplicationContext.cs" />
-    <Compile Include="Concrete\AssassinsRepo.cs" />
-    <Compile Include="Concrete\BeggarsRepo.cs" />
-    <Compile Include="Concrete\FoolsRepo.cs" />
     <Compile Include="Concrete\Inventory.cs" />
     <Compile Include="Concrete\Player.cs" />
-    <Compile Include="Concrete\ThievesRepo.cs" />
     <Compile Include="Models\Assassin.cs" />
     <Compile Include="Models\Beggar.cs" />
     <Compile Include="Models\Fool.cs" />

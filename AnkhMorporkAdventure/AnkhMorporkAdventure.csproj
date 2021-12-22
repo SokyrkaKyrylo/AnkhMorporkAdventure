@@ -137,8 +137,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AssassinsController.cs" />
     <Compile Include="Controllers\BeggarsController.cs" />
@@ -149,10 +149,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\ModelBinders\AssassinGuildModelBinder.cs" />
     <Compile Include="Infrastructure\DbManager.cs" />
+    <Compile Include="Infrastructure\ModelBinders\BeggarGuildModelBinder.cs" />
+    <Compile Include="Infrastructure\ModelBinders\FoolGuildModelBinder.cs" />
+    <Compile Include="Infrastructure\ModelBinders\ThiefGuildModelBinder.cs" />
     <Compile Include="Infrastructure\MoneyConvertor.cs" />
+    <Compile Include="Infrastructure\ModelBinders\PlayerModelBinder.cs" />
     <Compile Include="Infrastructure\NinjectDependencyResolver.cs" />
-    <Compile Include="Infrastructure\PlayerModelBinder.cs" />
     <Compile Include="Infrastructure\NumberOfTheftsManager.cs" />
     <Compile Include="Models\GameIndexMessageModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -177,14 +181,14 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Content\Images\ankh-morpork.jpg" />
-    <Content Include="Content\Images\assassins-guild.jpg" />
-    <Content Include="Content\Images\beggar.jpg" />
-    <Content Include="Content\Images\cityIcon.png" />
-    <Content Include="Content\Images\contract.jpg" />
-    <Content Include="Content\Images\fools-guild.jpg" />
-    <Content Include="Content\Images\mendedDrum.jpg" />
-    <Content Include="Content\Images\thieves-guild.jpg" />
+    <Content Include="Images\ankh-morpork.jpg" />
+    <Content Include="Images\assassins-guild.jpg" />
+    <Content Include="Images\beggar.jpg" />
+    <Content Include="Images\cityIcon.png" />
+    <Content Include="Images\contract.jpg" />
+    <Content Include="Images\fools-guild.jpg" />
+    <Content Include="Images\mendedDrum.jpg" />
+    <Content Include="Images\thieves-guild.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />

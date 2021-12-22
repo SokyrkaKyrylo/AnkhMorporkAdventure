@@ -1,4 +1,5 @@
 ﻿using AnkhMorporkAdventure.Domain.Abstract;
+using AnkhMorporkAdventure.Domain.Abstract.Guilds;
 using AnkhMorporkAdventure.Domain.Concrete;
 using AnkhMorporkAdventure.Infrastructure;
 using AnkhMorporkAdventure.Models;
@@ -7,15 +8,8 @@ using System.Web.Mvc;
 namespace AnkhMorporkAdventure.Controllers
 {
     public class ThievesController : Controller
-    {
-        private IThievesRepo _thieves;
-
-        public ThievesController(IThievesRepo thieves)
-        {
-            _thieves = thieves;
-        }
-
-        public ActionResult ThievesIndex()
+    {       
+        public ActionResult ThievesIndex(IThiefGuild thieves)
         {            
             if (NumberOfTheftsManager.NumberOfThefts == 0)
             {
@@ -28,7 +22,7 @@ namespace AnkhMorporkAdventure.Controllers
             }
 
             NumberOfTheftsManager.NumberOfThefts--;
-            var thief = _thieves.GetThief();
+            var thief = thieves.GetThief();
             
             return View(thief);
         }

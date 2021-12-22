@@ -1,4 +1,5 @@
 ﻿using AnkhMorporkAdventure.Domain.Abstract;
+using AnkhMorporkAdventure.Domain.Abstract.Guilds;
 using AnkhMorporkAdventure.Domain.Concrete;
 using AnkhMorporkAdventure.Domain.Models;
 using AnkhMorporkAdventure.Infrastructure;
@@ -9,16 +10,10 @@ namespace AnkhMorporkAdventure.Controllers
 {
     public class FoolsController : Controller
     {
-        private IFoolsRepo _fools;
-
-        public FoolsController(IFoolsRepo fools)
+     
+        public ActionResult FoolsIndex(IFoolGuild fools)
         {
-            _fools = fools;
-        }
-
-        public ActionResult FoolsIndex()
-        {
-            var fool = _fools.GetFool();
+            var fool = fools.GetFool();
             return View(fool);
         }
 

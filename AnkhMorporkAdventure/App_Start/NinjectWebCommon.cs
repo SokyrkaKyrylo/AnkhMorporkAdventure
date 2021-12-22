@@ -1,4 +1,4 @@
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(AnkhMorporkAdventure.App_Start.NinjectWebCommon), "Start")]
+﻿[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(AnkhMorporkAdventure.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(AnkhMorporkAdventure.App_Start.NinjectWebCommon), "Stop")]
 
 namespace AnkhMorporkAdventure.App_Start
@@ -12,14 +12,14 @@ namespace AnkhMorporkAdventure.App_Start
     using Ninject.Web.Common;
     using Ninject.Web.Common.WebHost;
 
-    public static class NinjectWebCommon 
+    public static class NinjectWebCommon
     {
         private static readonly Bootstrapper bootstrapper = new Bootstrapper();
 
         /// <summary>
         /// Starts the application.
         /// </summary>
-        public static void Start() 
+        public static void Start()
         {
             DynamicModuleUtility.RegisterModule(typeof(OnePerRequestHttpModule));
             DynamicModuleUtility.RegisterModule(typeof(NinjectHttpModule));
