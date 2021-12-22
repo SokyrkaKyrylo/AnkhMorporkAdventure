@@ -1,0 +1,12 @@
+C:\Users\kyrylo.sokyrka\Projects\AnkhMorporkAdventure\AnkhMorporkAdventure.Domain\obj\Debug\AnkhMorporkAdventure.Domain.csproj.AssemblyReference.cache
+C:\Users\kyrylo.sokyrka\Projects\AnkhMorporkAdventure\AnkhMorporkAdventure.Domain\obj\Debug\AnkhMorporkAdventure.Domain.csproj.CoreCompileInputs.cache
+C:\Users\kyrylo.sokyrka\Projects\AnkhMorporkAdventure\AnkhMorporkAdventure.Domain\bin\Debug\AnkhMorporkAdventure.Domain.dll.config
+C:\Users\kyrylo.sokyrka\Projects\AnkhMorporkAdventure\AnkhMorporkAdventure.Domain\bin\Debug\AnkhMorporkAdventure.Domain.dll
+C:\Users\kyrylo.sokyrka\Projects\AnkhMorporkAdventure\AnkhMorporkAdventure.Domain\bin\Debug\AnkhMorporkAdventure.Domain.pdb
+C:\Users\kyrylo.sokyrka\Projects\AnkhMorporkAdventure\AnkhMorporkAdventure.Domain\bin\Debug\EntityFramework.dll
+C:\Users\kyrylo.sokyrka\Projects\AnkhMorporkAdventure\AnkhMorporkAdventure.Domain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\kyrylo.sokyrka\Projects\AnkhMorporkAdventure\AnkhMorporkAdventure.Domain\bin\Debug\EntityFramework.xml
+C:\Users\kyrylo.sokyrka\Projects\AnkhMorporkAdventure\AnkhMorporkAdventure.Domain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\kyrylo.sokyrka\Projects\AnkhMorporkAdventure\AnkhMorporkAdventure.Domain\obj\Debug\AnkhMorporkAdventure.Domain.csproj.CopyComplete
+C:\Users\kyrylo.sokyrka\Projects\AnkhMorporkAdventure\AnkhMorporkAdventure.Domain\obj\Debug\AnkhMorporkAdventure.Domain.dll
+C:\Users\kyrylo.sokyrka\Projects\AnkhMorporkAdventure\AnkhMorporkAdventure.Domain\obj\Debug\AnkhMorporkAdventure.Domain.pdb

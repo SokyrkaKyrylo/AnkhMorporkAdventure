@@ -1,0 +1,27 @@
+﻿@using AnkhMorporkAdventure.Models;
+@{
+    ViewBag.Title = "Assassins";
+}
+
+<div class="row">
+    <div class="col-4">
+        <h3>You came across a presenter of Ankh-Morpork Assassins' Guild</h3>
+        <br />
+        <h4>He said that smb want's to kill and offer a help, u only should pay"</h4>
+        @Html.ActionLink("Accept guild's help", "Contract", "Assassins", new { }, new
+        {
+            @class = "btn btn-secondary"
+        })
+        @Html.ActionLink("Refuse guild's help", "Index", "Game",
+            new GameIndexMessageModel
+            {
+                Title = "You died",
+                Message = "Somebody in mask killed u",
+                Died = true
+            },
+                new { @class = "btn btn-secondary" })
+    </div>
+    <div class="col-8">
+        <img src="~/Images/assassins-guild.jpg" class="img-thumbnail float-end" alt="...">
+    </div>
+</div>
